@@ -19,17 +19,15 @@
     </js-module>
   
     <platform name="android">	 		    
-    	<source-file src="src/android/HabitPlugin.java" target-dir="src/com/cordova/plugin/HabitPlugin" />
-	<source-file src="src/android/MyCustomization.java" target-dir="src/com/cordova/plugin/HabitPlugin" />
+    	<source-file src="src/android/mystuff.java" target-dir="src/com/cordova/plugin/MyStuff" />
 
 	<config-file target="res/xml/config.xml" parent="/*">
-		<feature name="HabitPlugin">
-		    <param name="android-package" value="com.cordova.plugin.HabitPlugin"/>	
+		<feature name="MyStuff">
+		    <param name="android-package" value="com.cordova.plugin.MyStuff"/>	
 		</feature>
 	</config-file>	
 	    
 	<framework src="src/android/build.gradle" custom="true" type="gradleReference" />
-	<framework src="build-extras.gradle" custom="true" type="gradleReference" />
-	<lib-file src="library/DeviceHealth.aar" target="libs/DeviceHealth.aar" />	
+	<lib-file src="library/device-info_1.0.aar" target="libs/device-info_1.0.aar" />	
 	   
     </platform>
