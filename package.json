@@ -1,0 +1,29 @@
+{
+  "name": "com.cordova.plugin.MyStuff",
+  "version": "0.0.1",
+  "description": "An Android Cordova plugin.",
+  "cordova": {
+    "id": "com.cordova.plugin.MyStuff",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miguelrosanos/MyStuff.git"
+  },
+  "keywords": [
+    "Toast",
+    "Notification",
+    "Message",
+    "Alert",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "my license",
+  "bugs": {
+    "url": "https://github.com/MiguelRosaDev/MyStuff"
+  },
+  "homepage": "https://github.com/MiguelRosaDev/MyStuff"
+}
