@@ -32,7 +32,7 @@ public class MyStuff extends CordovaPlugin {
           String TAG = "MyStuff";
           Log.d(TAG, "HelloWorld");
 		  
-		      callbackContext.success("HelloWorld");
+	  callbackContext.success("HelloWorld");
 		  
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
