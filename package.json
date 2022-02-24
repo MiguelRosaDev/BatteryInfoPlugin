@@ -1,9 +1,9 @@
 {
-  "name": "com.cordova.plugin.MyStuff",
+  "name": "com.cordova.plugin.DeviceInfoPlugin",
   "version": "0.0.1",
   "description": "An Android Cordova plugin.",
   "cordova": {
-    "id": "com.cordova.plugin.MyStuff",
+    "id": "com.cordova.plugin.DeviceInfoPlugin",
     "platforms": [
       "android",
       "ios"
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/miguelrosanos/MyStuff.git"
+    "url": "git+https://github.com/miguelrosanos/DeviceInfoPlugin.git"
   },
   "keywords": [
     "Toast",
@@ -23,7 +23,7 @@
   ],
   "license": "my license",
   "bugs": {
-    "url": "https://github.com/MiguelRosaDev/MyStuff"
+    "url": "https://github.com/MiguelRosaDev/DeviceInfoPlugin"
   },
-  "homepage": "https://github.com/MiguelRosaDev/MyStuff"
+  "homepage": "https://github.com/MiguelRosaDev/DeviceInfoPlugin"
 }
