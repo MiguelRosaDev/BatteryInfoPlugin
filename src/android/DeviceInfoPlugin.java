@@ -4,9 +4,9 @@ import com.an.deviceinfo;
 
 import android.util.Log;
 
-public class MyStuff extends CordovaPlugin {
+public class DeviceInfoPlugin extends CordovaPlugin {
   
-  private static final String TAG = "MyStuff";
+  private static final String TAG = "DeviceInfoPlugin";
 
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -29,7 +29,6 @@ public class MyStuff extends CordovaPlugin {
       cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {	
-          String TAG = "MyStuff";
           Log.d(TAG, "HelloWorld");
 		  
 	  callbackContext.success("HelloWorld");
@@ -46,7 +45,6 @@ public class MyStuff extends CordovaPlugin {
       cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {	
-          String TAG = "MyStuff";
           Log.d(TAG, "getBatteryPercent");
             
           int batteryPercentage = getBatteryPercent();
