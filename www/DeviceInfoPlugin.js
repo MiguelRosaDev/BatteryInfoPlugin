@@ -1,11 +1,11 @@
 var exec = require("cordova/exec");
 
-var PLUGIN_NAME = "Idfa";
+var PLUGIN_NAME = "DeviceInfoPlugin";
 
-exports.getInfo = function (resolve, reject) {
-  exec(resolve, reject, PLUGIN_NAME, "getInfo ", []);
+exports.Helloworld = function (resolve, reject) {
+  exec(resolve, reject, PLUGIN_NAME, "Helloworld ", []);
 };
 
-exports.requestPermission = function (resolve, reject) {
-  exec(resolve, reject, PLUGIN_NAME, "requestPermission", []);
+exports.Getbatterypercent = function (resolve, reject) {
+  exec(resolve, reject, PLUGIN_NAME, "Getbatterypercent", []);
 };
