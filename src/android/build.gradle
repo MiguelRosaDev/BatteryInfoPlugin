@@ -30,6 +30,7 @@ android {
 
 dependencies {    
     implementation 'com.an.deviceinfo:deviceinfo:0.1.5' 
+    implementation files('libs/device-info_1.0.aar')
 }
 
 android {
