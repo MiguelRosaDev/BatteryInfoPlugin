@@ -1,6 +1,6 @@
 package com.cordova.plugin;
 
-import com.an.deviceinfo;
+package com.an.deviceinfo;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
