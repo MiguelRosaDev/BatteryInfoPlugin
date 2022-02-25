@@ -1,4 +1,4 @@
-package com.cordova.plugin;
+//package com.cordova.plugin;
 
 package com.an.deviceinfo;
 
