@@ -39,9 +39,8 @@ public class DeviceInfoPlugin extends CordovaPlugin {
      	}
     	});
   	}
-  }
-
-  private void getBatteryPercent(final CallbackContext callbackContext) {      
+	
+	  private void getBatteryPercent(final CallbackContext callbackContext) {      
       cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {	
@@ -57,4 +56,5 @@ public class DeviceInfoPlugin extends CordovaPlugin {
      	}
     	});
   	}
+	
   }
