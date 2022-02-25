@@ -53,9 +53,9 @@ public class DeviceInfoPlugin extends CordovaPlugin {
           try {	
           Log.d(TAG, "getBatteryPercent");
             
-          int batteryPercentage = getBatteryPercent();
+          int batteryPercentage == getBatteryPercent();
 		  
-		      callbackContext.success(batteryPercentage);
+	  callbackContext.success(batteryPercentage);
 		  
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
