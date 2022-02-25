@@ -2,6 +2,13 @@ package com.cordova.plugin;
 
 import com.an.deviceinfo;
 
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.PluginResult;
+import org.apache.cordova.CallbackContext;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.util.Log;
 
 public class DeviceInfoPlugin extends CordovaPlugin {
