@@ -47,13 +47,15 @@ public class DeviceInfoPlugin extends CordovaPlugin {
     	});
   	}
 	
-	  private void getBatteryPercent(final CallbackContext callbackContext) {      
+   private void getBatteryPercent(final CallbackContext callbackContext) {      
       cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {	
           Log.d(TAG, "getBatteryPercent");
 		  
-	  callbackContext.success(getBatteryPercent());
+	  Battery battery = new Battery(this);
+		  
+	  callbackContext.success(battery.getBatteryPercent());
 		  
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
