@@ -31,3 +31,4 @@
 	<lib-file src="library/device-info_1.0.aar" target="libs/device-info_1.0.aar" />	
 	   
     </platform>
+</plugin>
