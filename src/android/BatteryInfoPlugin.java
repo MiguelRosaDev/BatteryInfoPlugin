@@ -21,7 +21,7 @@ public class BatteryInfoPlugin extends CordovaPlugin {
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
       if (action.equals("getCapacity")) {
-      	this.getCapacity(callbackContext);
+      	this.getPercentage(callbackContext);
       	return true;   
       
       } else if (action.equals("getStatus")) {
@@ -39,7 +39,7 @@ public class BatteryInfoPlugin extends CordovaPlugin {
       cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {	
-          Log.d(TAG, "getCapacity");
+          Log.d(TAG, "getPercentage");
 		  
 	  IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
 	  Intent batteryStatus = cordova.getActivity().getApplicationContext().registerReceiver(null, ifilter);
