@@ -62,8 +62,20 @@ public class BatteryInfoPlugin extends CordovaPlugin {
           try {	
           Log.d(TAG, "getStatus");
 	
+	  IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+    	  Intent batteryStatus = this.registerReceiver(null, ifilter);
+
+    	  int status = batteryStatus.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
+    	  boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING || status == BatteryManager.BATTERY_STATUS_FULL;
+
+    	  int chargePlug = batteryStatus.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1);
+    	  boolean usbCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_USB;
+    	  boolean acCharge = chargePlug == BatteryManager.BATTERY_PLUGGED_AC;
+    	  int level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+    	  int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+    	  float batteryPct = (level / (float) scale) * 100;
 		  
-	  callbackContext.success("Yes");
+	  callbackContext.success(String.valueOf(batteryPct) + "% charging?: " + isCharging + " AC Charging?: " + acCharge + " USB Charging?: " + usbCharge);
 		  
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
