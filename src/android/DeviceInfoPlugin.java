@@ -19,11 +19,11 @@ public class BatteryInfoPlugin extends CordovaPlugin {
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
       if (action.equals("getCapacity")) {
-      	this.HelloWorld(callbackContext);
+      	this.getCapacity(callbackContext);
       	return true;   
       
       } else if (action.equals("getStatus")) {
-        this.getBatteryPercent(callbackContext);	    
+        this.getStatus(callbackContext);	    
         return true;  
 
       } else {
