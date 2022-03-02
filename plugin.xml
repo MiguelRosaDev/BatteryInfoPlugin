@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="com.cordova.plugin.MyStuff" version="0.0.1">
-    <name>MyStuff</name>
+        id="com.cordova.plugin.BatteryInfoPlugin" version="0.0.1">
 
+    <name>BatteryInfoPlugin</name>
     <description>An Android Cordova plugin</description>
-    <license>Moxie</license>
-
     <keywords>cordova,android,toast,message,alert</keywords>
 	
     <engines>
@@ -14,21 +12,18 @@
         <engine name="cordova-ios" version=">=5.1.1" />
     </engines>
 	
-    <js-module name="DeviceInfoPlugin" src="www/DeviceInfoPlugin.js">
-    	<clobbers target="DeviceInfoPlugin" />
+    <js-module name="BatteryInfoPlugin" src="www/BatteryInfoPlugin.js">
+    	<clobbers target="BatteryInfoPlugin" />
     </js-module>
   
     <platform name="android">	 		    
-    	<source-file src="src/android/DeviceInfoPlugin.java" target-dir="src/com/cordova/plugin/DeviceInfoPlugin" />
+    	<source-file src="src/android/BatteryInfoPlugin.java" target-dir="src/com/cordova/plugin/BatteryInfoPlugin" />
 
 	<config-file target="res/xml/config.xml" parent="/*">
-		<feature name="DeviceInfoPlugin">
-		    <param name="android-package" value="com.cordova.plugin.DeviceInfoPlugin"/>	
+		<feature name="BatteryInfoPlugin">
+		    <param name="android-package" value="com.cordova.plugin.BatteryInfoPlugin"/>	
 		</feature>
 	</config-file>	
-	    
-	<framework src="src/android/build.gradle" custom="true" type="gradleReference" />
-	<lib-file src="library/device-info_1.0.aar" target="libs/device-info_1.0.aar" />	
-	   
+	   	   
     </platform>
 </plugin>
