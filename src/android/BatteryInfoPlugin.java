@@ -1,7 +1,6 @@
 package com.cordova.plugin.BatteryInfoPlugin;
 
-import android.app.KeyguardManager;
-import android.hardware.BatteryState;
+import android.os.BatteryManager
 import android.content.Context;
 
 import org.apache.cordova.CordovaPlugin;
@@ -40,9 +39,8 @@ public class BatteryInfoPlugin extends CordovaPlugin {
           try {	
           Log.d(TAG, "getCapacity");
 		  
-	  BatteryState state = (BatteryState) this.cordova.getActivity().getApplicationContext();
 		  
-	  callbackContext.success(state.getCapacity());
+	  callbackContext.success("");
 		  
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
@@ -57,9 +55,8 @@ public class BatteryInfoPlugin extends CordovaPlugin {
           try {	
           Log.d(TAG, "getStatus");
 	
-	  BatteryState state = (BatteryState) this.cordova.getActivity().getApplicationContext();
 		  
-	  callbackContext.success(state.getStatus());
+	  callbackContext.success("");
 		  
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
