@@ -2,8 +2,8 @@ var exec = require("cordova/exec");
 
 var PLUGIN_NAME = "BatteryInfoPlugin";
 
-exports.getCapacity = function (resolve, reject) {
-  exec(resolve, reject, PLUGIN_NAME, "getCapacity ", []);
+exports.getPercentage = function (resolve, reject) {
+  exec(resolve, reject, PLUGIN_NAME, "getPercentage ", []);
 };
 
 exports.getStatus = function (resolve, reject) {
