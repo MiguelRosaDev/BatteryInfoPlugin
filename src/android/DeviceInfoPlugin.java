@@ -1,6 +1,7 @@
 package com.cordova.plugin;
 
-import com.an.deviceinfo;
+import android.hardware.BatteryState;
+import android.content.Context;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
@@ -11,17 +12,17 @@ import org.json.JSONObject;
 
 import android.util.Log;
 
-public class DeviceInfoPlugin extends CordovaPlugin {
+public class BatteryInfoPlugin extends CordovaPlugin {
   
   private static final String TAG = "DeviceInfoPlugin";
 
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-      if (action.equals("HelloWorld")) {
+      if (action.equals("getCapacity")) {
       	this.HelloWorld(callbackContext);
       	return true;   
       
-      } else if (action.equals("getBatteryPercent")) {
+      } else if (action.equals("getStatus")) {
         this.getBatteryPercent(callbackContext);	    
         return true;  
 
@@ -32,13 +33,15 @@ public class DeviceInfoPlugin extends CordovaPlugin {
         }
     }
 		    
-  private void HelloWorld(final CallbackContext callbackContext) {      
+  private void getCapacity(final CallbackContext callbackContext) {      
       cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {	
-          Log.d(TAG, "HelloWorld");
+          Log.d(TAG, "getCapacity");
 		  
-	  callbackContext.success("HelloWorld");
+	  BatteryState state = (BatteryState) this.cordova.getActivity().getApplicationContext();
+		  
+	  callbackContext.success(state.getCapacity());
 		  
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
@@ -47,15 +50,15 @@ public class DeviceInfoPlugin extends CordovaPlugin {
     	});
   	}
 	
-   private void getBatteryPercent(final CallbackContext callbackContext) {      
+   private void getStatus(final CallbackContext callbackContext) {      
       cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {	
-          Log.d(TAG, "getBatteryPercent");
+          Log.d(TAG, "getStatus");
+	
+	  BatteryState state = (BatteryState) this.cordova.getActivity().getApplicationContext();
 		  
-	  Battery battery = new Battery(this);
-		  
-	  callbackContext.success(battery.getBatteryPercent());
+	  callbackContext.success(state.getStatus());
 		  
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
