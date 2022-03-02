@@ -63,7 +63,7 @@ public class BatteryInfoPlugin extends CordovaPlugin {
           Log.d(TAG, "getStatus");
 	
 	  IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-    	  Intent batteryStatus = this.registerReceiver(null, ifilter);
+    	  Intent batteryStatus = cordova.getActivity().getApplicationContext().registerReceiver(null, ifilter);
 
     	  int status = batteryStatus.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
     	  boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING || status == BatteryManager.BATTERY_STATUS_FULL;
