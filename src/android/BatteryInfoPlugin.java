@@ -1,6 +1,6 @@
 package com.cordova.plugin.BatteryInfoPlugin;
 
-import android.os.BatteryManager
+import android.os.BatteryManager;
 import android.content.Context;
 
 import org.apache.cordova.CordovaPlugin;
