@@ -6,12 +6,7 @@
     <name>BatteryInfoPlugin</name>
     <description>An Android Cordova plugin</description>
     <keywords>cordova,android,toast,message,alert</keywords>
-	
-    <engines>
-        <engine name="cordova-android" version=">=10.1.1" />
-        <engine name="cordova-ios" version=">=5.1.1" />
-    </engines>
-	
+		
     <js-module name="BatteryInfoPlugin" src="www/BatteryInfoPlugin.js">
     	<clobbers target="BatteryInfoPlugin" />
     </js-module>
