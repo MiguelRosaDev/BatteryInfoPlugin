@@ -1,5 +1,6 @@
-package com.cordova.plugin;
+package com.cordova.plugin.BatteryInfoPlugin;
 
+import android.app.KeyguardManager;
 import android.hardware.BatteryState;
 import android.content.Context;
 
