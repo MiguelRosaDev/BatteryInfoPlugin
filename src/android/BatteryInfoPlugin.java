@@ -35,7 +35,7 @@ public class BatteryInfoPlugin extends CordovaPlugin {
         }
     }
 		    
-  private void getCapacity(final CallbackContext callbackContext) {      
+  private void getPercentage(final CallbackContext callbackContext) {      
       cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {	
