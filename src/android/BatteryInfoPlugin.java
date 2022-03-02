@@ -1,4 +1,4 @@
-package com.cordova.plugin.BatteryInfoPlugin;
+package com.cordova.plugin;
 
 import android.os.BatteryManager;
 import android.content.IntentFilter;
@@ -16,11 +16,11 @@ import android.util.Log;
 
 public class BatteryInfoPlugin extends CordovaPlugin {
   
-  private static final String TAG = "DeviceInfoPlugin";
+  private static final String TAG = "BatteryInfoPlugin";
 
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-      if (action.equals("getCapacity")) {
+      if (action.equals("getPercentage")) {
       	this.getPercentage(callbackContext);
       	return true;   
       
