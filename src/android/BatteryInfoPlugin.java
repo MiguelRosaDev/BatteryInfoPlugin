@@ -56,7 +56,7 @@ public class BatteryInfoPlugin extends CordovaPlugin {
           Log.d(TAG, "getStatus");
 	
 		  
-	  callbackContext.success("");
+	  callbackContext.success(isCharging());
 		  
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
