@@ -95,7 +95,7 @@ public class BatteryInfoPlugin extends CordovaPlugin {
           try {	
           Log.d(TAG, "gethealthStatus");
 		  
-	  String batteryStatus = "";
+	  String result = "";
 	
 	  IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
     	  Intent batteryStatus = cordova.getActivity().getApplicationContext().registerReceiver(null, ifilter);
@@ -103,28 +103,28 @@ public class BatteryInfoPlugin extends CordovaPlugin {
     	  int status = batteryStatus.getIntExtra(BatteryManager.EXTRA_HEALTH, 0);
 		  
 	  if(status == BatteryManager.BATTERY_HEALTH_COLD){ 
- 		batteryStatus = "Battery health = Cold"; 
+ 		result = "Battery health = Cold"; 
  	  }
 	  if (status == BatteryManager.BATTERY_HEALTH_DEAD){
-	        batteryStatus = "Battery health = Dead";
+	        result = "Battery health = Dead";
 	  }
 	  if (status == BatteryManager.BATTERY_HEALTH_GOOD){
-	        batteryStatus = "Battery health = Good";
+	        result = "Battery health = Good";
 	  }
 	  if (status == BatteryManager.BATTERY_HEALTH_OVERHEAT){
-	        batteryStatus = "Battery health = Over Heat";
+	        result = "Battery health = Over Heat";
 	  }
 	  if (status == BatteryManager.BATTERY_HEALTH_OVER_VOLTAGE){
-	        batteryStatus = "Battery health = Over Voltage";
+	        result = "Battery health = Over Voltage";
 	  }
 	  if(status == BatteryManager.BATTERY_HEALTH_UNKNOWN){
-	        batteryStatus = "Battery health = Unknown";
+	        result = "Battery health = Unknown";
 	  }
 	  if(status == BatteryManager.BATTERY_HEALTH_UNSPECIFIED_FAILURE){
-	        batteryStatus = "Battery health = Unspecified failure";
+	        result = "Battery health = Unspecified failure";
 	  }
 		  
-	  callbackContext.success(batteryStatus);
+	  callbackContext.success(result);
 		  
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
