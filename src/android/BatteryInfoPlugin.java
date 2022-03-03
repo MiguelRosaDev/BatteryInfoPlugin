@@ -28,7 +28,11 @@ public class BatteryInfoPlugin extends CordovaPlugin {
         this.getChargindStatus(callbackContext);	    
         return true;  
 
-      } else {
+      } else if (action.equals("gethealthStatus")) {
+        this.gethealthStatus(callbackContext);	    
+        return true;
+	  
+      }  else {
         callbackContext.error("\"" + action + "\" is not a recognized action.");
         return false;
 
